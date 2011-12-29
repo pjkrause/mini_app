@@ -32,6 +32,7 @@ gem 'jquery-rails'
 
 group :development do
   gem 'rspec-rails', '2.6.1', :require => 'rspec-rails'
+  gem 'annotate', '2.4.0'
   gem 'test-unit'
 end
 
