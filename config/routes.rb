@@ -1,9 +1,18 @@
 MiniApp::Application.routes.draw do
-  get "sessions/new"
+  get "relationships/create"
 
-  resources :users
+  get "relationships/destroy"
+
+  # get "sessions/new"
+
+  resources :users do
+    member do
+      get :following, :followers
+    end
+  end
   resources :sessions, :only => [:new, :create, :destroy]
   resources :microposts, :only => [:create, :destroy]
+  resources :relationships, :only => [:create, :destroy]
 
   match '/signup', :to => 'users#new'
   match '/signin', :to => 'sessions#new'
