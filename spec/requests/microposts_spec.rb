@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe "Microposts" do
+describe "microposts" do
   before(:each) do
     user = Factory(:user)
     visit signin_path
